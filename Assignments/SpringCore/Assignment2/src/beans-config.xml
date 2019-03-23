@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employee"
+		class="com.java.spring.autowire.xmlconfig.Employee" autowire="byName">
+		<property name="dob" ref="dates" />
+		<property name="designation" value="Manager" />
+		<property name="salary" value="56000" />
+		<property name="fulltime" value="false" />
+		<property name="skills">
+			<list>
+				<value>UI</value>
+				<value>Java</value>
+				<value>Database</value>
+				<value>Testing</value>
+			</list>
+		</property>
+		<property name="id" value="101" />
+		<property name="name" value="Shree" />
+	</bean>
+	<bean id="address"
+		class="com.java.spring.autowire.xmlconfig.Address">
+		<property name="city" value="bengaluru" />
+		<property name="country" value="India" />
+		<property name="pin" value="560045" />
+	</bean>
+	<bean id="dates" class="java.time.LocalDate"
+		factory-method="parse">
+		<constructor-arg index="0" value="1995-02-18"></constructor-arg>
+	</bean>
+</beans>
