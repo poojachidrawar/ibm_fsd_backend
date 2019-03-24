@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+   <bean id="employee_services" class="com.java.spring.empmanagement.autowiring.EmployeeServices">
+         <property name="employeedao" ref="employeedao"></property>
+   </bean>
+   
+   
+   <bean id="employeedao" class="com.java.spring.empmanagement.autowiring.EmployeeDao" >
+   </bean>
+  
+  
+   <bean id="employee" class="com.java.spring.empmanagement.autowiring.Employee" >
+   </bean>
+  
+</beans>
