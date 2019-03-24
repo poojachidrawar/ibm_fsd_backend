@@ -3,7 +3,7 @@ package com.java.spring.core.javabased.xmlconfig;
 
 import org.springframework.stereotype.Component;
 
-@Component 
+
 public class Address {
 	
 	String city;
