@@ -4,10 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
-@Component
+@Component("employee")
 public class Employee {
 	
 	int id;
@@ -20,6 +21,10 @@ public class Employee {
 	@Autowired
 	Address address;
 	boolean fulltime;
+	
+	public Employee() {
+		
+	}
 	
 	public Employee(Address address) {
 		this.address = address;
@@ -39,6 +44,7 @@ public class Employee {
 		return id;
 	}
 	
+	@Value("101")
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -47,6 +53,7 @@ public class Employee {
 		return name;
 	}
 	
+	@Value("John")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -54,6 +61,7 @@ public class Employee {
 	public LocalDate getDob() {
 		return dob;
 	}
+	
 	
 	public void setDob(LocalDate dob) {
 		this.dob = dob;
@@ -63,6 +71,7 @@ public class Employee {
 		return designation;
 	}
 	
+	@Value("Manager")
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
@@ -71,6 +80,8 @@ public class Employee {
 		return salary;
 	}
 	
+	
+	@Value("50000")
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
@@ -79,6 +90,8 @@ public class Employee {
 		return skills;
 	}
 	
+	
+	@Value(value="UI,Java,Dtabase")
 	public void setSkills(List skills) {
 		this.skills = skills;
 	}
@@ -95,6 +108,7 @@ public class Employee {
 		return fulltime;
 	}
 	
+	@Value("true")
 	public void setFulltime(boolean fulltime) {
 		this.fulltime = fulltime;
 	}
